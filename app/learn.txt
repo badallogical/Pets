@@ -1,0 +1,6 @@
+1. Importance of style.xml file , here we should define the theme color because  these colors will be picked by the android, and uses as a theme colors that are
+colorPrimary - > for app bar
+colorPrimaryDark -> for status bar
+colorAccent -> for UI components like checkbox, button , text other
+
+this small add on really give an app a standard look.

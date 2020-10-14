@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Pets</string>
+    <string name="cat_overview">Overview</string>
+    <string name="cat_gender">Gender</string>
+    <string name="cat_measurement">Measurement</string>
+    <string name="unit">Kg</string>
+    <string name="INVALID_DATA"> INVALID_DATA</string>
+    <string name="empty_title">It\'s a bit lonely here...</string>
+    <string name="empty_intro">Get started by adding a pet</string>
+    <string name="unsaved_changes">Discard your changes and quit editing?</string>
+    <string name="keep_editing">Keep Editing</string>
+    <string name="discard">Discard</string>
+    <string name="delete_this_pet">Delete this pet?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_all_pet">Are you sure to delete all pets?</string>
+    <string name="delete_all">Delete All</string>
+    <string name="ok">OK</string>
+    <string name="app_info">Welcome To Pet Store, it helps to see your lovely Pets and take care of them.</string>
+
+    <string-array name="gender_opt">
+        <item name="opt1">Unknown</item>
+        <item name="opt2">Male</item>
+        <item name="opt3">Female</item>
+    </string-array>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CatalogActivityMain">
+
+
+    <ListView
+        android:id="@+id/pet_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/droid_sans"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/empty_view"
+        android:orientation="vertical" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/empty_image"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_empty_shelter"
+            />
+
+        <TextView
+            android:id="@+id/empty_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_title"
+            android:fontFamily="sans-serif"
+            android:layout_below="@+id/empty_image"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_intro"
+            android:fontFamily="sans-serif"
+            android:layout_below="@+id/empty_title"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:textAppearanceSmall"
+
+            />
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_pet"
+        />
+
+
+</RelativeLayout>
