@@ -6,14 +6,16 @@
     tools:context=".CatalogActivityMain">
 
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pet_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fontFamily="@font/droid_sans"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
-        android:textAppearance="?android:textAppearanceMedium" />
+        android:textAppearance="?android:textAppearanceMedium"
+        tools:listitem="@layout/item_layout"
+        />
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
