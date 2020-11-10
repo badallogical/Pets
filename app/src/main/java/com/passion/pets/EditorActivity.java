@@ -28,7 +28,7 @@
 //import android.widget.Toast;
 //
 //
-//public class EditorActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<Cursor>{
+//public class EditorActivity extends AppCompatActivity {
 //
 //    TextView name;
 //    TextView breed;

@@ -3,6 +3,7 @@ package com.passion.pets;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,11 +14,15 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.passion.pets.data.PetListAdapter;
 import com.passion.pets.room.Pet;
 import com.passion.pets.room.PetViewModel;
+
+import java.util.List;
 
 
 public class CatalogActivityMain extends AppCompatActivity {
@@ -33,19 +38,36 @@ public class CatalogActivityMain extends AppCompatActivity {
         /* recycler view */
         RecyclerView recyclerView = findViewById(R.id.pet_list);
         PetListAdapter petListAdapter = new PetListAdapter();
-        recyclerView.setAdapter(petListAdapter);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
+        recyclerView.setAdapter(petListAdapter);
+
+
+        RelativeLayout emptyView =  findViewById(R.id.empty_view);
 
 
         /* View Model */
         // get the viewModel by view model provider
         petViewModel = ViewModelProviders.of(this).get(PetViewModel.class);
 
+
+
         // add a observer to live data
         petViewModel.getAllpets().observe( this, (pets) -> {
             // change pet list
             petListAdapter.setPetList(pets);
-            Toast.makeText(this, "Dataset Changed", Toast.LENGTH_LONG );
+
+            // configure empty view
+            if( pets.isEmpty()){
+                recyclerView.setVisibility(View.GONE);
+                emptyView.setVisibility(View.VISIBLE);
+            }
+            else{
+                recyclerView.setVisibility(View.VISIBLE);
+                emptyView.setVisibility(View.GONE);
+            }
+
+
+            Toast.makeText(this, "Dataset Changed", Toast.LENGTH_LONG ).show();
         });
 
         /* Floating Action Button */

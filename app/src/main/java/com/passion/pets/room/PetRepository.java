@@ -27,7 +27,7 @@ public class PetRepository  {
     }
 
     public void deleteAll(){
-        new AsyncUpdate(petDao).execute();
+        new AsyncDelete(petDao).execute((Pet) null);
     }
 
     public void update(Pet pet ){
@@ -83,7 +83,8 @@ public class PetRepository  {
 
         @Override
         protected Void doInBackground(Pet... pets) {
-            petDao.updatePet( pets[0] );
+            if( pets[0] != null )
+                petDao.updatePet( pets[0] );
             return null;
         }
     }
