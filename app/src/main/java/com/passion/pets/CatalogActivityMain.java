@@ -3,12 +3,14 @@ package com.passion.pets;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -41,14 +43,11 @@ public class CatalogActivityMain extends AppCompatActivity {
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
         recyclerView.setAdapter(petListAdapter);
 
-
         RelativeLayout emptyView =  findViewById(R.id.empty_view);
-
 
         /* View Model */
         // get the viewModel by view model provider
         petViewModel = ViewModelProviders.of(this).get(PetViewModel.class);
-
 
 
         // add a observer to live data
@@ -72,11 +71,10 @@ public class CatalogActivityMain extends AppCompatActivity {
 
         /* Floating Action Button */
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
+        fab.setOnClickListener(v -> {
+            Intent pushPet = new Intent( CatalogActivityMain.this , EditorActivity.class );
+            pushPet.putExtra(EditorActivity.intentType, "ADD");
+            startActivity(pushPet);
         });
     }
 

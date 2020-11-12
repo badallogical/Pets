@@ -10,10 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Child Activity -->
-<!--        <activity-->
-<!--            android:name=".EditorActivity"-->
-<!--            android:parentActivityName=".CatalogActivityMain" />-->
+        <activity
+            android:name=".EditorActivity"
+            android:parentActivityName=".CatalogActivityMain" />
 
         <!-- Main Activity -->
         <activity android:name=".CatalogActivityMain">
@@ -28,11 +27,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-<!--        &lt;!&ndash; Content Provider &ndash;&gt;-->
-<!--        <provider-->
-<!--            android:name=".data.PetProvider"-->
-<!--            android:authorities="com.passion.pets"-->
-<!--            android:exported="false"/>-->
 
     </application>
 
