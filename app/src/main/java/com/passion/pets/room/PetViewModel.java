@@ -1,11 +1,15 @@
 package com.passion.pets.room;
 
 import android.app.Application;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 public class PetViewModel extends AndroidViewModel {
@@ -38,4 +42,5 @@ public class PetViewModel extends AndroidViewModel {
     public LiveData<List<Pet>> getAllpets(){
         return allpets;
     }
+
 }

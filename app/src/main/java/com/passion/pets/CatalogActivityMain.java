@@ -39,7 +39,7 @@ public class CatalogActivityMain extends AppCompatActivity {
 
         /* recycler view */
         RecyclerView recyclerView = findViewById(R.id.pet_list);
-        PetListAdapter petListAdapter = new PetListAdapter();
+        PetListAdapter petListAdapter = new PetListAdapter(this);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
         recyclerView.setAdapter(petListAdapter);
 
@@ -64,9 +64,6 @@ public class CatalogActivityMain extends AppCompatActivity {
                 recyclerView.setVisibility(View.VISIBLE);
                 emptyView.setVisibility(View.GONE);
             }
-
-
-            Toast.makeText(this, "Dataset Changed", Toast.LENGTH_LONG ).show();
         });
 
         /* Floating Action Button */

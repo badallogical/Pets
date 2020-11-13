@@ -17,7 +17,7 @@ public interface PetDao {
     @Query("SELECT * FROM pets_table")
     LiveData<List<Pet>> getAllPets();
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPet(Pet p );
 
     @Delete
