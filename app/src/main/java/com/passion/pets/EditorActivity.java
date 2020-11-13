@@ -79,7 +79,7 @@ public class EditorActivity extends AppCompatActivity {
         else{
             getSupportActionBar().setTitle("Edit your pet");
             Pet p = (Pet) intent.getExtras().get("PET");
-            mPetName.setText(p.getPetName() + " " + p.getId());
+            mPetName.setText(p.getPetName() );
             mPetBreed.setText(p.getPetBreed());
             mPetGender.setSelection(p.getPetGender());
             mPetWeight.setText( String.valueOf(p.getPetWeight()));
